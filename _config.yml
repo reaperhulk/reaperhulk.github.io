@@ -4,6 +4,7 @@ exclude: ["README.md"]
 markdown: redcarpet
 permalink: "/:year/:month/:day/:title/"
 google_analytics: UA-5567613-2
+root: /
 
 redcarpet:
   extensions: [footnotes, tables]
