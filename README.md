@@ -1,1 +1,1 @@
-Now running jekyll 3. See _config.yml for config details
+The source repository for https://langui.sh
