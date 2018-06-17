@@ -1,0 +1,36 @@
+---
+author: admin
+comments: true
+date: 2010-11-14 18:37:48+00:00
+layout: post
+slug: aviansafari-1-1-0
+title: AvianSafari 1.1.0
+wordpress\_id: 1385
+tags:
+- aviansafari
+- javascript
+- twitter
+---
+
+I've just released [AvianSafari 1.1.0](http://langui.sh/aviansafari).
+
+
+
+### Features
+
+
+
+
+
+
+  * Significant performance improvements
+
+
+  * Support for "Snowflake" 64-bit status IDs
+
+
+  * Fixes for timestamps in View Thread
+
+
+
+Get it now!  Or check out the [updated source](http://github.com/reaperhulk/aviansafari).

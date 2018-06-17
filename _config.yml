@@ -1,0 +1,27 @@
+paginate: 15 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"]
+markdown: redcarpet
+permalink: "/:year/:month/:day/:title/"
+google_analytics: UA-5567613-2
+
+redcarpet:
+  extensions: [footnotes, tables]
+
+title: langui.sh
+author:
+  name: Paul Kehrer
+#  email: myemail
+  github: reaperhulk
+  twitter: reaperhulk
+#  resume: asd123
+  bio: Languishing since 2008.
+  email_md5: 81f310942fe5989105a6b474cda4c843
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH: ""
+
+gems: [jekyll-paginate, jekyll-sitemap]

@@ -1,0 +1,50 @@
+---
+layout: post
+title: r509 (Ruby Certificate Authority API) v0.10.0 Released
+---
+[r509](http://r509.org) v0.10.0 is out! Huge improvements and unfortunately several breaking changes (mostly to YAML) to accommodate them.
+
+###What is r509?
+r509 is a Ruby gem built using OpenSSL that simplifies management of a public key infrastructure. The r509 API helps with CSR creation, signing/parsing of certificates, revocation (CRL/OCSP), and much more. Along with projects like r509-ocsp-responder & r509-ca-http it is a (RFC 5280) certificate authority suitable for production environments.
+
+###Incomplete Feature Highlights
+
+* <span style="color: green;">Feature:</span> You can now define a list of allowed\_mds for each certificate profile.
+* <span style="color: blue;">Refactor:</span> CAProfile is now known as CertProfile.
+* <span style="color: blue;">Refactor:</span> message\_digest in CAConfig renamed to default\_md and moved into CertProfile
+* <span style="color: blue;">Refactor:</span> Moved default\_md, ocsp\_location, ca\_issuers\_location, and cdp\_location into CertProfile from CAConfig. This changes the YAML.
+* <span style="color: blue;">Refactor:</span> Substantial changes to the YAML config structure.
+* <span style="color: green;">Feature:</span> Extensions can now be directly created via the [R509::Cert::Extensions::*](http://r509.org/doc/R509/Cert/Extensions.html) classes. These extensions can also generate the YAML required to build them.
+* <span style="color: blue;">Refactor:</span> R509::CertificateAuthority::Signer refactored to be more generic. Creation of [R509::CertificateAuthority::OptionsBuilder](http://r509.org/doc/R509/CertificateAuthority/OptionsBuilder.html) to build the options to issue a certificate from a CAConfig+CertProfile.
+* <span style="color: green;">Feature:</span> R509::CertificateAuthority::Signer#sign and .selfsign now allow arbitrary extensions to be passed.
+* <span style="color: green;">Feature:</span> [SubjectItemPolicy](http://r509.org/doc/R509/Config/SubjectItemPolicy.html) now supports "match" in addition to required/optional. This necessitates a YAML/argument change.
+* <span style="color: blue;">Refactor:</span> R509::CRL::Administrator has been rebuilt to support alternate message digests, CRL signing delegation, and a host of other improvements.
+* <span style="color: green;">Feature:</span> R509::CSR.new now allows an R509::ASN1::GeneralNames object for :san\_names to allow better control over types.
+* <span style="color: blue;">Default Change:</span> Subject key identifier and basic constraints are now added to self-signed certificates by default (although this can be overridden).
+* <span style="color: green;">Feature:</span> Load OID mappings from YAML with [R509::OIDMapper.register_from_yaml](http://r509.org/doc/R509/OIDMapper.html)
+* <span style="color: green;">Feature:</span> last\_update/next\_update are now configurable when calling [R509::CRL::Administrator#generate_crl](http://r509.org/doc/R509/CRL/Administrator.html#generate_crl-instance_method)
+* <span style="color: green;">Feature:</span> [R509::CRL::Administrator](http://r509.org/doc/R509/CRL/Administrator.html) supports pluggable [ReaderWriter](http://r509.org/doc/R509/CRL/ReaderWriter.html) classes for crl\_number and crl\_list data.
+
+* <span style="color: blue">Refactor:</span> :type key in the PrivateKey and CSR constructor now takes a string (RSA/DSA/EC) rather than a symbol. This was done to improve consistency (keys should be symbols, values should be strings).
+
+...and much, much more. View the [documentation](http://r509.org/doc/index.html) for further assistance or join #r509 on Freenode IRC.
+
+####Installing/Contributing
+Just gem install r509 (and any of the other r509 gems you use) and you're ready to go! sha1sums for each gem are below if you wish to verify you have an unaltered gem.
+
+If you'd like to contribute, just click the gem name to view the source on GitHub! Contribution and feedback is always welcome.
+
+| Gem Name (with GitHub Link) | Version | sha1sum |
+| --------------------------- |:-------:| -------:|
+| [r509](https://github.com/r509/r509) | 0.10.0 | a1889eb04c7e0c44989a6dba4d95508c48596b9d |
+| [r509-ocsp-responder](https://github.com/r509/r509-ocsp-responder) | 0.3.3 | f0f247d3cd631aa25eefdeeb4714f3afe35b4f5f |
+| [r509-ca-http](https://github.com/r509/r509-ca-http) | 0.3 | f7f33dc0aba357799f5b5a6d9629271baf662222 |
+| [r509-middleware-validity](https://github.com/r509/r509-middleware-validity) | 0.2.1 | 46025f7e4e9f2ff13c735462764a14751adc9812 |
+| [r509-middleware-certwriter](https://github.com/r509/r509-middleware-certwriter) | 0.2.1 | 89d4ca24c3e0191a9c696cc4b367bbf3805128d4 |
+| [r509-validity-redis](https://github.com/r509/r509-validity-redis) | 0.4.2 | 86ad75f275d53d5b0dd08c97241da6a6157b1d3a |
+
+####Ruby CA Tutorial
+I've updated my how-to on [building a CA with r509](/2012/11/02/building-a-ca-r509-howto/) to support the new version as well, so if you're just getting started with r509 check it out!
+
+####Future Release Plans
+Current intent is to release a 0.11 with a few more API changes, then 1.0 in a few months when I'm comfortable with long-term support for the existing API. Releases at that point will conform to the principles of [semantic versioning](http://semver.org).

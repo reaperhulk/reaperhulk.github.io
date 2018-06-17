@@ -1,0 +1,15 @@
+---
+author: admin
+comments: true
+date: 2010-06-09 04:08:05+00:00
+layout: post
+slug: sni-in-ios-4-0
+title: SNI in iOS 4.0
+wordpress\_id: 1160
+tags:
+- ssl
+---
+
+iOS 4.0 supports SNI, which makes it the first mobile OS to support the server\_name TLS extension.  Hopefully Android, WebOS, WM7, et al follow suit!
+
+(Oh, and I'm not dead. WP 3.0 comes out shortly so expect a major CDN Tools update as well as a brand new plugin!)

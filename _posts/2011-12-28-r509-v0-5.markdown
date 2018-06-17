@@ -1,0 +1,17 @@
+---
+author: admin
+comments: true
+date: 2011-12-28 04:01:50+00:00
+layout: post
+slug: r509-v0-5
+title: r509 v0.5
+wordpress\_id: 1542
+tags:
+- openssl
+- r509
+- ruby
+---
+
+I haven't talked about [r509](http://r509.org) here in awhile, but since v0.5 just got tagged I thought I'd plug it again. r509 is a wrapper for the OpenSSL libraries in Ruby. It's designed to allow you to do a wide variety of certificate authority related operations (issuance, revocation, CRL generation, OCSP responses, et cetera). There are also some ancillary gems that are under active development ([r509-ca-http](https://github.com/r509/r509-ca-http), [r509-ocsp-responder](https://github.com/r509/r509-ocsp-responder), [r509-validity-redis](https://github.com/r509/r509-validity-redis)) which will gain more documentation as these projects progress.
+
+Check it out, file issues, fork, and contribute!

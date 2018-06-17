@@ -1,0 +1,122 @@
+---
+author: admin
+comments: true
+date: 2009-10-01 14:24:25+00:00
+layout: post
+slug: improving-mvim-for-macvim
+title: Improving mvim for MacVim
+wordpress\_id: 671
+tags:
+- mac
+- macvim bash
+---
+
+[MacVim](http://code.google.com/p/macvim/) comes with a clever script called _mvim_ which allows you to open files in MacVim via the command line (much like _mate_ for TextMate).  This is a wonderful tool, but does possess some idiosyncrasies.  It creates a new window (rather than a new tab) when you invoke it and it also won't take stdin as input unless you pass a dash[^1].
+
+To fix this I modified the script to check for an existing macvim process, and if it exists attach tabs to it.[^2]  Additionally, it checks for args and if none are present (or just -) the script invokes stdin.  I am not much of a bash hacker though, so there are a few caveats...
+
+
+
+
+  * --remote-tab-silent doesn't seem to work with listening on stdin, so the script always pops it out into a new window.
+
+
+  * You (apparently) can't pass extra parameters when using --remote-tab-silent, so tricks like mvim /etc/hosts +5 to have it open with the cursor on line 5 will not work.
+
+
+These are both irritating, but I feel the advantages outweigh the disadvantages.  Hopefully someone can contribute fixes to these problems!
+
+
+```bash
+#!/bin/sh
+#
+# This shell script passes all its arguments to the binary inside the
+# MacVim.app application bundle.  If you make links to this script as view,
+# gvim, etc., then it will peek at the name used to call it and set options
+# appropriately.
+#
+# Based on a script by Wout Mertens and suggestions from Laurent Bihanic.  This
+# version is the fault of Benji Fisher, 16 May 2005 (with modifications by Nico
+# Weber and Bjorn Winckler, Aug 13 2007.  Some mediocre hacking by Paul Kehrer Sep 30 2009).
+# First, check "All the Usual Suspects" for the location of the Vim.app bundle.
+# You can short-circuit this by setting the VIM_APP_DIR environment variable
+# or by un-commenting and editing the following line:
+# VIM_APP_DIR=/Applications
+
+if [ -z "$VIM_APP_DIR" ]
+then
+  myDir="`dirname "$0"`"
+  myAppDir="$myDir/../Applications"
+  for i in ~/Applications ~/Applications/vim $myDir $myDir/vim $myAppDir $myAppDir/vim /Applications /Applications/vim /Applications/Utilities /Applications/Utilities/vim; do
+    if [ -x "$i/MacVim.app" ]; then
+      VIM_APP_DIR="$i"
+      break
+    fi
+  done
+fi
+if [ -z "$VIM_APP_DIR" ]
+then
+  echo "Sorry, cannot find MacVim.app.  Try setting the VIM_APP_DIR environment variable to the directory containing MacVim.app."
+  exit 1
+fi
+binary="$VIM_APP_DIR/MacVim.app/Contents/MacOS/Vim"
+
+# Next, peek at the name used to invoke this script, and set options
+# accordingly.
+
+name="`basename "$0"`"
+gui=
+opts=
+
+# GUI mode, implies forking
+case "$name" in m*|g*|rg*) gui=true ;; esac
+
+# Restricted mode
+case "$name" in r*) opts="$opts -Z";; esac
+
+# vimdiff and view
+case "$name" in
+  *vimdiff)
+    opts="$opts -dO"
+    ;;
+  *view)
+    opts="$opts -R"
+    ;;
+esac
+
+tabs=true
+stdinoption=false
+
+#let's see if we need to read from stdin
+#script currently assumes NO PARAMETERS
+if [ -z "$1" ] || [[ $1 == \- ]]; then
+  stdinoption=true
+fi
+
+# Last step:  fire up vim.
+# The program should fork by default when started in GUI mode, but it does
+# not; we work around this when this script is invoked as "gvim" or "rgview"
+# etc., but not when it is invoked as "vim -g".
+if [ "$gui" ]; then
+  # Note: this isn't perfect, because any error output goes to the
+  # terminal instead of the console log.
+  # But if you use open instead, you will need to fully qualify the
+  # path names for any filenames you specify, which is hard.
+  if $stdinoption; then
+    exec "$binary" -g -
+  else
+    if $tabs && [ `ps x|grep 'MacOS/MacVim'|grep -v grep|wc -l` = "1" ] && [[ `$binary --serverlist` = "VIM" ]]; then
+      #when using remote tabs you can't pass things like +5.
+      exec "$binary" -g $opts --remote-tab-silent ${1:+"$@"}
+    else
+      exec "$binary" -g $opts ${1:+"$@"}
+    fi
+  fi
+else
+  exec "$binary" $opts ${1:+"$@"}
+fi
+```
+
+[^1]: This is the standard vim way, but feels irritatingly inelegant to me.
+
+[^2]: The script does a ps x to check for the existence of a macvim process.  This is done before the serverlist check because the script will output ugly errors to stdout if there is no macvim process.

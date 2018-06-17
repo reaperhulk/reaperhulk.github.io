@@ -1,0 +1,49 @@
+---
+author: admin
+comments: true
+date: 2009-03-15 16:36:25+00:00
+layout: post
+slug: fidgetr-10
+title: Fidgetr 1.0
+wordpress\_id: 422
+tags:
+- fidgetr
+- wordpress
+---
+
+As promised, Fidgetr 1.0 has been released.  Here are the improvements since the last time I posted about it:
+
+
+
+
+  * Incremented version to 1.0 to catch users stuck at versions earlier than 0.6.1.  Welcome back to the cutting edge!
+
+
+  * Reworked the crossfade theme JS to fix some bugs and dramatically simplify the code.
+
+
+  * Photoset support! Display your latest photos or photos from a photoset.
+
+
+  * Removed requirement for allow\_url\_fopen. Fidgetr now tries to use the cURL libraries first.
+
+
+  * Added an AJAX check to warn the user if their Flickr username/email is invalid.
+
+
+  * Added some advanced CSS in the default theme (visible in Safari 4 only)
+
+
+  * Fixed a quote issue with fetching comments, thanks lupinehorror!
+
+
+  * Preliminary i18n support
+
+
+  * Better compatibility
+
+
+  * Quite a few minor fixes not listed.
+
+
+Check out the [Fidgetr homepage](http://langui.sh/fidgetr/) to download it.  Next up on the block, a major update to CDN Tools...

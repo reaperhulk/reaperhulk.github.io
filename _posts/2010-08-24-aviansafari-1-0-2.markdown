@@ -1,0 +1,13 @@
+---
+author: admin
+comments: true
+date: 2010-08-24 17:40:49+00:00
+layout: post
+slug: aviansafari-1-0-2
+title: AvianSafari 1.0.2
+wordpress\_id: 1355
+---
+
+Just a quick note that [AvianSafari](/aviansafari) 1.0.2 has been released.  If you're on a previous version you should upgrade immediately since the API key was reset (I foolishly committed it to my local repo and forgot I was planning on pushing it to a public Github repository).  If you're seeing Twitter authentication requests in Safari then that's the manifestation of the issue.  Sorry about that!
+
+[Download now](http://langui.sh/aviansafari/download.html)!

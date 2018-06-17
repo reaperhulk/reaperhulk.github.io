@@ -1,0 +1,64 @@
+==================================================================
+https://keybase.io/reaperhulk
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://langui.sh
+  * I am reaperhulk (https://keybase.io/reaperhulk) on keybase.
+  * I have a public key with fingerprint 05FD 9FA1 6CF7 5735 0D91  A560 235A E5F1 29F9 ED98
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "05fd9fa16cf757350d91a560235ae5f129f9ed98",
+            "host": "keybase.io",
+            "key_id": "235AE5F129F9ED98",
+            "uid": "4a22990922f462e7649ea02ea5c11100",
+            "username": "reaperhulk"
+        },
+        "service": {
+            "hostname": "langui.sh",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1398724044,
+    "expire_in": 157680000,
+    "prev": "86312f42f9aa63edb34931f60c88321ce1cd7452f683bc38d5a26a54cd900eb9",
+    "seqno": 14,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owE1kVtIFFEYx3fXW4piGFKJ0DYWaYjOfeesJBW5PXQzVskS3Z3LGXdym9lmx8sq
+RlrQBYoKCkOQXuyiSSDbg5VW2A1yLS2pDNSKlB60lKiUrM6InZfD+Z/f//99H9+5
+pCiLzZpx4PNM1txUs/X5g1nB4i4f7q/HBE0KYc56rBIuXrKiVkA9oCuqgTkxnJEl
+IPMEK8oOxkExuAQInmFxkmJ4yMgECWQAJcBh2ZhPC5oOFCPwQZijaEhDD48iIRXx
+WwoYF+JdoGDbIl+1+EHzJAkADkhSplkSOlgaQB4nIc+IBEHguAkGoa7yhyCidcgH
+oO6r8ldiDdkY0qsVEZpdm8WXGD+vVlQpOUEfsgZ0zdBEzY9kn2EEgk7TZoQCJlcD
+Bc9SgkdQVAnNjRzVUA8qmoo5CUSKhmJGEhTgHCSN03Q2BmsDig49ikkwDpbD0THr
+wGoUybEUgeYgZcDzLAUlgaIBRcgsLnIcRRIiJETJQTOkzHKUIFKcxPAkyzO0KAEc
+hwLAzJkOqxrKRqUMvgJlBpUKlTeqdIg1nLKmR1usNktsjM1cnSUhfvn/hYZT4/5k
+thiNGzK+eM7u6JjdmpYgpDwbkIc3jyx09ndyMYOx0aGo3BfkPrXsgn0mHGiMu92t
+pZ5uutI71BtxlxyrffKj8NXdvCP+pL3W7rUpbz8c3/h+MnIrMdQ3WpznDPfK+vXx
+wVWFE0cbMiNZK/CXK89D2334dX5nclz+HXbdWOmu8u81uff6lv29mb4GTLXHPn3k
+bituadrfNjF5xk7X+die5p/TifZWzuY1tKSTN4pip0vL3NPfds9/Cl8d3bNwwrGp
+4+BvMhI/MBcey81PjFzyPmyfpC63FrmGfo23e9df68z0vl5dk1o/8jitJK/HFb7Y
+uL1rln6TnPKxLvldU5f9Hw==
+=nlwz
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/reaperhulk
+
+==================================================================

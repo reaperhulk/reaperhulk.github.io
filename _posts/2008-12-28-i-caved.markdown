@@ -1,0 +1,11 @@
+---
+author: admin
+comments: true
+date: 2008-12-28 23:08:12+00:00
+layout: post
+slug: i-caved
+title: I Caved
+wordpress\_id: 3
+---
+
+I gave up and added this blog because Twitter was too constraining.  I suspect I will almost never update this, but at least I can dump some useful info here for google users to consume.

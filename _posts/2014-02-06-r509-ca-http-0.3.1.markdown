@@ -1,0 +1,6 @@
+---
+layout: post
+title: r509-ca-http 0.3.1
+---
+
+Just a quick note that [r509-ca-http](https://github.com/r509/r509-ca-http) has been updated to v0.3.1 on rubygems. This release fixes a bug where revocation reasons were not being correctly handled. The sha1 of the gem is ```6c9904a8b4f9815aad164dfedd3436e42a81b4ad```.

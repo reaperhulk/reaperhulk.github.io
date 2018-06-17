@@ -1,0 +1,14 @@
+---
+author: admin
+comments: true
+date: 2011-03-31 18:52:46+00:00
+layout: post
+slug: r509-ruby-ca
+title: r509, Ruby CA
+wordpress\_id: 1476
+tags:
+- openssl
+- ruby
+---
+
+I've put a new project up on Github. [r509](https://github.com/r509/r509) is a CA written in Ruby which aims to do friendly wrapping around Ruby's baroque OpenSSL bindings. It's still in the early stages, but check it out if you're interested and fork if you want to help it improve!

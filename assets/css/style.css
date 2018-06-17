@@ -1,0 +1,88 @@
+/* font import in header.html */
+img {
+  max-width:100%;
+  vertical-align:bottom;
+}
+
+body{
+  color: #2c3e50;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+border-color: rgba(242, 117, 106, 0.8) !important;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(242, 117, 106, 0.6) !important;
+outline: 0 none;}
+
+h2.search-results {
+  color: #77216F;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  padding-top: 10%;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.sidebar-header .title{
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.sidebar-header .title a{
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a.nav-link {
+  padding-bottom: 5px;
+  padding-top: 7px;
+  color: #aaa;
+}
+a.nav-link i{
+  font-size: 16px;
+}
+a.nav-link:hover { color: #777 }
+
+#bio {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#contact-list-secondary {
+  padding-bottom: 10px;
+}
+
+article{
+  margin-bottom: 40px;
+}
+
+.article_body{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.post-date {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+article.home div a, article.home pre a { color: #2c3e50; }
+article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
+
+h1,h2,h3,h4,h5,h6{ font-family: 'Ubuntu', sans-serif; color: #f2756a; }
+h1 a,h2 a,h3 a,h4 a{ color: #f2756a; }
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover{ color: #e74c3c; }
+
+
+
+footer {
+  padding-top: 15px;
+  font-family: 'Ubuntu';
+}

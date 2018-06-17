@@ -1,0 +1,72 @@
+---
+author: admin
+comments: true
+date: 2012-05-19 01:42:40+00:00
+layout: post
+slug: batters-box-1-6
+title: Batter's Box 1.6
+wordpress\_id: 1682
+---
+
+After an interesting approval process, 1.6 is now available. There is no 1.5! [Grab it](http://itunes.apple.com/us/app/batters-box/id510063319?mt=8) now!
+
+
+
+#### Changelog
+
+
+
+
+
+
+  * Strikes now have a black gradient outline while balls are white in the pitch-by-pitch
+
+
+  * Pitch speed is now shown at the point of release rather than when it crosses home plate (matches convention)
+
+
+  * Support 4 new pitch types
+
+
+  * Pitch popup now shows the count for each pitch in the at bat
+
+
+  * Score notifications can now be tapped to take you directly to the game detail
+
+
+  * Added stolen base data to the batting stats view for the game
+
+
+  * Handle hit by pitch end of atbat
+
+
+  * Fixed atbat/ondeck/inhole so it actually shows the player's hits properly
+
+
+  * Doubleheaders now show up as "Game 2" for game time, rather than extremely early in the morning
+
+
+  * Various small layout improvements and table striping across more stats tables
+
+
+  * Fix case where "delayed start" due to rain would not make it rain
+
+
+  * Add gradient to mugshots, make mask apply properly when game is postponed
+
+
+  * Handle "inclement weather" postponement with heavy rain effect
+
+
+  * When game is postponed before start time, show "postponed" in details view rather than the time
+
+
+  * New graphic when pitcher or batter details fail to load or are not yet available
+
+
+  * Large scale rewrite of underlying XML parser and various other subsystems
+
+
+  * Other code changes that are not user visible
+
+

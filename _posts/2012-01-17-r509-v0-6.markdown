@@ -1,0 +1,31 @@
+---
+author: admin
+comments: true
+date: 2012-01-17 20:23:53+00:00
+layout: post
+slug: r509-v0-6
+title: r509 v0.6
+wordpress\_id: 1567
+tags:
+- r509
+- ruby
+- x509
+---
+
+[r509](http://r509.org) v0.6 is out. There were 39 commits encompassing the following changes from 0.5 to 0.6.
+
+* Gemfile updated to set proper versions of supporting gems for doc generation
+* Fixes to load\_yaml in Config
+* OCSP handling extensively refactored and most of the logic moved into the [r509 OCSP responder](https://github.com/r509/r509-ocsp-responder) project.
+* Cert#subject\_component no longer improperly upcases elements
+* SAN is now supported in self-signed certificates
+* Cert#san\_names returns an empty array if no san\_names exist
+* Cert#fingerprint is now an available method
+* Cert#subject\_names returns a concatenation (de-duped) of CN and SANs
+* General refactoring in several areas to improve code quality
+* Csr now takes :san\_names in constructor instead of :domains. This is more consistent
+* Files renamed to lowercase to match Ruby conventions
+* Cert#in\_validity\_range? method added
+* Fixed some order dependent tests
+
+The majority of work went into improving the OCSP codebase, which was moved into the r509-ocsp-responder project, but that's a subject for another blog entry!
