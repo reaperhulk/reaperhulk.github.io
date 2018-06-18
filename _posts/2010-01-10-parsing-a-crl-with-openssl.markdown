@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2010-01-10 21:29:47-05:00
+date: 2010-01-10 11:29:47-05:00
 layout: post
 slug: parsing-a-crl-with-openssl
 title: Parsing A CRL With OpenSSL
