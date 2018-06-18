@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-06-18 00:44:11+00:00
 layout: post
 slug: localizing-safari-5-extensions
 title: Localizing Safari 5 Extensions

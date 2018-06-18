@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-12-08 01:45:10+00:00
 layout: post
 slug: list-all-vhosts-currently-enabled-in-apache
 title: List All VHosts Currently Enabled In Apache

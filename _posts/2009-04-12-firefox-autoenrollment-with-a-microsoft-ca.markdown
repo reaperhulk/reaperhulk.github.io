@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-04-13 00:43:46+00:00
 layout: post
 slug: firefox-autoenrollment-with-a-microsoft-ca
 title: Firefox Autoenrollment With A Microsoft CA

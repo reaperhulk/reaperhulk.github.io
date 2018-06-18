@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-05-11 00:19:58+00:00
 layout: post
 slug: right-click-on-a-mac-trackpad
 title: Right Click On A Mac Trackpad

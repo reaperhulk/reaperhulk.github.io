@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-12-08 02:36:30+00:00
 layout: post
 slug: writing-compatible-php-for-wordpress
 title: Writing Compatible PHP For WordPress

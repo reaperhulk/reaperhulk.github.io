@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-06-09 04:08:05+00:00
 layout: post
 slug: sni-in-ios-4-0
 title: SNI in iOS 4.0

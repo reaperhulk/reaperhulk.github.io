@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-01-30 02:16:07+00:00
 layout: post
 slug: announcing-fidgetr
 title: Announcing Fidgetr

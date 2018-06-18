@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-02-07 04:24:57+00:00
 layout: post
 slug: 5d-mark-ii-video-one-year-in
 title: 5D Mark II Video - One Year In

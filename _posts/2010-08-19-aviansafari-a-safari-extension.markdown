@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-08-20 00:44:30+00:00
 layout: post
 slug: aviansafari-a-safari-extension
 title: AvianSafari, A Safari Extension

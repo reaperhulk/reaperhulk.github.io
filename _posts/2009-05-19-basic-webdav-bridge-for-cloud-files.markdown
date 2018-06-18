@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-05-20 03:39:52+00:00
 layout: post
 slug: basic-webdav-bridge-for-cloud-files
 title: Basic WebDAV Bridge For Cloud Files

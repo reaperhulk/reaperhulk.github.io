@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-03-22 04:02:51+00:00
 layout: post
 slug: rsa-encryption-and-signing
 title: RSA Encryption and Signing

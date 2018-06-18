@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-03-08 01:02:09+00:00
 layout: post
 slug: generating-very-large-primes
 title: Generating (Very) Large Primes

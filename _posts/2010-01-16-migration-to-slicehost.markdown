@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-01-17 03:45:50+00:00
 layout: post
 slug: migration-to-slicehost
 title: Migration To Slicehost

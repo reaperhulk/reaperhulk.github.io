@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-10-15 02:58:01+00:00
 layout: post
 slug: fixing-growlmail-in-10-6-5-mail-4-4
 title: Fixing GrowlMail in 10.6.5 (Mail 4.4)

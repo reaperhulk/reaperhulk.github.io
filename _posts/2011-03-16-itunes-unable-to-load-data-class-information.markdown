@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2011-03-17 01:32:19+00:00
 layout: post
 slug: itunes-unable-to-load-data-class-information
 title: iTunes Unable To Load Data Class Information

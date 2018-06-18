@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2011-12-20 03:12:12+00:00
 layout: post
 slug: git-hooks-for-pre-commit-rspec-testing
 title: Git Hooks For Pre-Commit Rspec Testing

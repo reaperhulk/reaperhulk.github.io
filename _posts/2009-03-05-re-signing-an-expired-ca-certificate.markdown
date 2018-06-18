@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-03-06 04:24:25+00:00
 layout: post
 slug: re-signing-an-expired-ca-certificate
 title: Re-Signing An Expired CA Certificate

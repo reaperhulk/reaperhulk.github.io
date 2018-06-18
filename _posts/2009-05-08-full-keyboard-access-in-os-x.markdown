@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-05-09 00:37:07+00:00
 layout: post
 slug: full-keyboard-access-in-os-x
 title: Full Keyboard Access in OS X

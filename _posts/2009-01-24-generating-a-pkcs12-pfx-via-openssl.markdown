@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-01-25 05:32:44+00:00
 layout: post
 slug: generating-a-pkcs12-pfx-via-openssl
 title: Generating a PKCS12 (PFX) Via OpenSSL

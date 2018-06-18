@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2011-04-03 04:28:05+00:00
 layout: post
 slug: using-dd-in-os-x
 title: Using dd in OS X

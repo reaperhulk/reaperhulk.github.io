@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-11-20 00:42:10+00:00
 layout: post
 slug: building-services-using-automator-workflows-in-snow-leopard-10-6
 title: Building Services Using Automator Workflows in Snow Leopard (10.6)

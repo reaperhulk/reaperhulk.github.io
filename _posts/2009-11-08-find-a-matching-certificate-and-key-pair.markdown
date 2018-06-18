@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-11-09 02:49:21+00:00
 layout: post
 slug: find-a-matching-certificate-and-key-pair
 title: Find A Matching Certificate And Key Pair

@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-02-23 00:07:57+00:00
 layout: post
 slug: code-signing-for-mac-os-x-and-windows
 title: Code Signing for Mac OS X and Windows

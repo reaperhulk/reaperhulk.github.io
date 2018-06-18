@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-05-06 03:08:28+00:00
 layout: post
 slug: title-bar-tricks-in-os-x
 title: Title Bar Tricks in OS X

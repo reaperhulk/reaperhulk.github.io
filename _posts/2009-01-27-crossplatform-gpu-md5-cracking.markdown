@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-01-28 04:35:43+00:00
 layout: post
 slug: crossplatform-gpu-md5-cracking
 title: Crossplatform GPU MD5 Cracking

@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2009-12-30 00:40:05+00:00
 layout: post
 slug: set-up-linksyscisco-pap2t-na-with-gizmo5google-voice
 title: Set Up Linksys/Cisco PAP2T-NA With Gizmo5/Google Voice

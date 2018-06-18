@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2008-12-31 05:22:36+00:00
 layout: post
 slug: ssl-is-not-broken
 title: SSL Is Not Broken
