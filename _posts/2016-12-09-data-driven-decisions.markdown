@@ -20,7 +20,7 @@ For example, you, the developer of the library `frinkiac-iac` would like to drop
 
 Each of these choices can work, but frequently result in major breakage for users or an unacceptably long timeline for removal resulting in significant maintenance burden[^4]. You need data, but it's so hard to collect it. [Can't someone else do it?](https://frinkiac.com/caption/S09E22/750715)[^1]
 
-##BigQuery
+## BigQuery
 
 [Quietly announced](https://mail.python.org/pipermail/distutils-sig/2016-May/028986.html) back in May 2016, PyPI download statistics are the most powerful tool a Python developer can use to inform their decision making. To unleash its [awesome power](https://frinkiac.com/caption/S09E23/465781) start by loading the [dataset](https://bigquery.cloud.google.com/dataset/the-psf:pypi). **Preemptive apology:** If you are a new Google Cloud user you may be confronted with an unpleasant set of modals asking you to agree to various things and create a new project. What you actually need to do is get to billing and start a free trial[^5]. Once you've got the BigQuery console available you should be able to click that link again and access the page. Now you can click Compose Query!
 
@@ -28,7 +28,7 @@ BigQuery uses a SQL-like language. A [query reference](https://cloud.google.com/
 
 With this robust data set we can make substantially more informed decisions, but here are some examples to help you out. All the examples here use what Google references as "legacy SQL". Despite the name this is the default for queries, but feel free to use the [standard SQL](https://cloud.google.com/bigquery/docs/reference/standard-sql/) if you'd like!
 
-###Query: Python Versions
+### Query: Python Versions
 
 In the original scenario we were curious if we could drop support for Python 2.6. What does that query look like? For the following examples we'll be using `cryptography` since that's my primary project and the one I run queries on most commonly.
 
@@ -81,7 +81,7 @@ clients. You also see 341 downloads from 1.17, which is...who knows!
 When making maintenance decisions you should factor these unknowns as you
 feel appropriate.
 
-###Query: OpenSSL versions
+### Query: OpenSSL versions
 
 `cryptography` supports a wide variety of OpenSSL versions. However, supporting
 0.9.8 and 1.0.0 are a significant challenge since they are missing many of the
@@ -133,7 +133,7 @@ greater share, but only due to Darwin (aka macOS...aka OS X). In cryptography's
 case we statically link wheels on Mac and Windows so we can ignore the OpenSSL
 version on those platforms. Looks like dropping 0.9.8 and 1.0.0 is probably safe![^7]
 
-###Query: Most Popular Projects
+### Query: Most Popular Projects
 
 Maybe you just want to know how popular your package is relative to others in
 the past 30 days.
@@ -155,7 +155,7 @@ ORDER BY
 LIMIT 100
 ```
 
-###Query: How Many Downloads Did My Project Get?
+### Query: How Many Downloads Did My Project Get?
 
 Or maybe just your package:
 
@@ -172,7 +172,7 @@ WHERE
   file.project = 'cryptography'
 ```
 
-###Query: Downloads By Filename Filtered By Project and Version
+### Query: Downloads By Filename Filtered By Project and Version
 
 If you ship multiple release artifacts (platform/version specific wheels as
 well as sdist) this query can show you their popularity.
@@ -199,7 +199,7 @@ LIMIT 100
 ```
 
 
-###Query: Python 2 vs 3 For A Single Project
+### Query: Python 2 vs 3 For A Single Project
 
 We broke it down by Python release previously, but what if you just want to know 2 vs 3?
 
@@ -223,7 +223,7 @@ LIMIT 100
 In cryptography's case Python 3 currently makes up 11% of downloads[^8].
 
 
-###Query: Percentage of Downloads By Python 3 In The Top 100
+### Query: Percentage of Downloads By Python 3 In The Top 100
 
 Of course, a trivial modification and we can see the Python 3 percentage in the top 100 packages:
 
@@ -246,7 +246,7 @@ LIMIT 100
 ```
 
 
-###Query: Highest Python 3 Usage With More Than 100,000 Downloads Per 30 Days
+### Query: Highest Python 3 Usage With More Than 100,000 Downloads Per 30 Days
 
 ```sql
 SELECT
@@ -284,7 +284,7 @@ The top 10 is interesting here:
   <tr><td>10</td><td>azure-storage</td><td>54.7</td><td>213129</td></tr>
 </table>
 
-###Query: Which Packages By Percentage Are Downloaded Most Often Via Python 2.6?
+### Query: Which Packages By Percentage Are Downloaded Most Often Via Python 2.6?
 
 ```sql
 SELECT
@@ -311,7 +311,7 @@ ORDER BY
 LIMIT 250
 ```
 
-###Query: Most Used Installers/Versions
+### Query: Most Used Installers/Versions
 
 ```sql
 SELECT
@@ -332,7 +332,7 @@ ORDER BY
 LIMIT 100
 ```
 
-###Query: Downloads By Country
+### Query: Downloads By Country
 
 ```sql
 SELECT
@@ -351,7 +351,7 @@ ORDER BY
 LIMIT 100
 ```
 
-###Query: Python 3 Download Percentage Across PyPI Grouped By Month
+### Query: Python 3 Download Percentage Across PyPI Grouped By Month
 
 ```sql
 SELECT
@@ -392,7 +392,7 @@ This is an interesting query for obvious reasons[^10], but also one that process
 Data ingestion into the BigQuery data set was spotty prior to June 2016[^9], but you can see a significant uptick in Python 3 based downloads over 2016.
 [If these trends continue...](https://frinkiac.com/caption/S08E11/289555)
 
-##Decisions
+## Decisions
 
 These queries just scratch the surface of the data you can get about the Python ecosystem at large and your project in particular. Write your own queries and make your decisions about platform, version, and implementation with real information.
 
