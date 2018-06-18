@@ -124,7 +124,7 @@ This gives us a view of what OpenSSL is linked against Python broken down by pla
   <tr><td>7</td><td>Linux</td><td>1.0.1k-fips</td><td>9029119</td></tr>
   <tr><td>8</td><td>Linux</td><td>1.0.2j</td><td>8499043</td></tr>
   <tr><td>9</td><td>Windows</td><td>1.0.2h</td><td>5037984</td></tr>
-  <tr><td>10</td><td>Darwin</td><td>1.0.2j</td><td>3077958</tr>
+  <tr><td>10</td><td>Darwin</td><td>1.0.2j</td><td>3077958</td></tr>
 </table>
 
 While I haven't provided the entire set of results it turns out less than 100,000
