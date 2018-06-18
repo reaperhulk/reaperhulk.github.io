@@ -1,7 +1,6 @@
 ---
 author: admin
 comments: true
-date: 2010-02-25 01:16:59+00:00
 layout: post
 slug: sni-support-in-chromium-os-x
 title: SNI Support in Chromium OS X
