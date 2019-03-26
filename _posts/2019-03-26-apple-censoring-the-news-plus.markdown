@@ -21,7 +21,7 @@ Apple only shows the News app on phones that are within the appropriate region. 
 News content is a sensitive topic in China. The government exercises a significant degree of control over information sources so it is unsurprising that Apple would choose to not support News there. However, instead of simply being locked behind a hardware feature gate, Apple chose to disable it much more forcefully. If you enter China with a US iPhone (e.g. one purchased in the US from a US carrier or at a US Apple Store), using a US carrier, with your phone set to the US region, and with location services disabled for the News app, you will still receive this message upon opening News:
 
 
-<div style="margin:0 auto"><img src="/assets/media/2013/01/dkim-signed-email.png" style="width:281px"></div>
+<div style="margin:0 auto"><img src="/assets/media/2019/feed-unavailable.png" style="width:281px"></div>
 
 To accomplish this censorship Apple is using a form of location fingerprinting that is not available to normal applications on iOS. It works like this: despite the fact that your phone uses a SIM from a US carrier it must connect to a Chinese cellular network. Apple is using private APIs to identify that you are in mainland China based on the name of the underlying cellular network and blocking access to the News app. This information is not available via public APIs in iOS[1. There is an API for querying the cellular network, but it will only return your carrier, not the network you may be roaming on] specifically to improve privacy for users.
 
