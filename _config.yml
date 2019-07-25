@@ -21,4 +21,4 @@ tags_path: tags.html
 
 BASE_PATH: ""
 
-gems: [jekyll-paginate, jekyll-sitemap]
+plugins: [jekyll-paginate, jekyll-sitemap]
