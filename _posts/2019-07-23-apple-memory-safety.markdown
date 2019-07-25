@@ -7,7 +7,7 @@ Over at <a href="https://twitter.com/lazyfishbarrel">@LazyFishBarrel</a> we've b
 
 ## What is memory unsafety and why should I care?
 
-Memory unsafety[^3] is a property of a programming language that allows the creation of bugs and security vulnerabilities related to memory access. Languages like C and C++[^4] are memory unsafe because they allow memory violations such as use of uninitialized memory, double free, buffer overflow, use after free, etc. To avoid these the programmer must perfectly allocate, write, read, and deallocate memory or else serious vulnerabilities can easily occur. These bugs are especially frustrating because they represent an entire class of issues that can be **entirely fixed** by moving to languages that do not suffer from these limitations[^5].
+Memory unsafety[^3] is a property of a programming language that allows the creation of bugs and security vulnerabilities related to memory access. Languages like C and C++[^4] are memory unsafe because they allow memory violations such as use of uninitialized memory, double free, buffer overflow, use after free, etc. To avoid these the programmer must perfectly allocate, write, read, and deallocate memory or else serious vulnerabilities can easily occur. These bugs are especially frustrating because they represent an class of issues that can be **entirely fixed** by moving to languages that do not suffer from these limitations[^5].
 
 ## iOS 12
 
