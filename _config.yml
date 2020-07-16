@@ -1,9 +1,12 @@
 paginate: 15 # pagination based on number of posts
 paginate_path: "page:num"
-exclude: ["README.md"]
+exclude: ["README.md", "vendor"]
 markdown: kramdown
 permalink: "/:year/:month/:day/:title/"
 google_analytics: UA-5567613-2
+collections:
+  drafts:
+    output: true
 
 title: langui.sh
 author:
