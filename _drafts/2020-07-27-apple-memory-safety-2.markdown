@@ -7,7 +7,7 @@ title: The Year in Memory Unsafety - Apple's Operating Systems
 
 ## iOS/iPadOS
 
-iOS 13 was released September 19, 2019 and has subsequently had a total of 15 feature and point releases. Unlike macOS, the iOS 13 series has several small bugfix releases that did not correct security issues. These are marked as N/A for bugs/CVEs but remain present in the list below.
+iOS 13 was released September 19, 2019 and has subsequently had a total of 14 feature and point releases. Unlike macOS, the iOS 13 series has several small bugfix releases that did not correct security issues. These are marked as N/A for bugs/CVEs but remain present in the list below.
 
 | Release                                                      | Memory Unsafety Bugs | Total CVE Count | Percentage |
 | ------------------------------------------------------------ | -------------------- | --------------- | ---------- |
@@ -51,10 +51,10 @@ It would be interesting to aggregate statistics across major versions, but we on
 
 Let's look at this aggregated for all of iOS 13 (with iOS 12 for a limited historical perspective).
 
-| Total CVE Count | Memory Unsafety Bugs | Percentage | Release |
-| 179             | 106                  | 59.2%      | iOS 13  |
-| 261             | 173                  | 66.3%      | iOS 12  |
-| 309             | 187                  | 60.5%      | iOS 11  |
+| Release | Memory Unsafety Bugs | Total CVE Count | Percentage |
+| iOS 13  | 106                  | 179             | 59.2%      |
+| iOS 12  | 173                  | 261             | 66.3%      |
+| iOS 11  | 187                  | 309             | 60.5%      |
 
 To date, Apple has had substantially less bugs with a lower (although unlkely to be statistically significant) percentage of memory unsafety related issues. This, intriguingly, does not align with the general belief that iOS 13 is a buggier release, but security bugs and user-facing bugs (which are what create that sort of reputation) are not necessarily an overlapping set.
 
@@ -109,6 +109,16 @@ The above statistics are for any code that ships with macOS or iOS (including th
 | macOS 10.15 | 58                   | 65              | 89.2%      |
 | macOS 10.14 | 67                   | 76              | 88.2%      |
 | macOS 10.13 | 65                   | 88              | 73.9%      |
+
+The vast majority of kernel-related CVEs continue to be memory unsafety related.
+
+## Analysis (Bugs vs Security Architecture Redux)
+
+Memory unsafety contineus to dominate the total percentage of security bugs on Apple's platforms. Engineers there should **strenuously encourage management** to prioritize migration of system daemons and other sensitive binaries to memory safe languages. Doing so would drastically cut the number of security vulnerabilities. Major investment should also be undertaken in determining how to migrate XNU itself. Moving kernel extensions to a C++ userland (via the <a href="https://developer.apple.com/system-extensions/">system extension</a> concept) will mitigate the severity of vulnerabilities in some cases, but is ultimately a poor substitute for a memory safe solution. As we noted last year, <a href="https://twitter.com/i41nbeer">Ian Beer</a> once said:
+
+> given sufficient bug density, security design is irrelevant
+
+Apple continues to create rich and robust security systems, but their systematic under-investment in memory safety (and even some mitigations like pervasive fuzzing) remain a sore spot for 2020.
 
 
 [^1]: No blog post discussing another company's vulnerabilities would be complete without a discussion of the limitations.  Apple provides reasonably well-written descriptions of bugs and these allow us to generally bucket the vulnerabilities into our two categories of interest. However, occasionally a bug will defy easy categorization. For WebKit issues Apple does not distinguish between JIT compiler induced memory unsafety and C/C++ induced.  Apple also occasionally releases fixes that are still embargoed. When this happens they release their security notes, but update them at a later date with additional fixes. They denote these additional entries with an "Entry added on **date**" subscript, but we have typically long-since tweeted about it and won't catch the additional entries.  Since a significant amount of code is shared across Apple's operating systems (especially at the kernel level) many of these CVEs are duplicates across macOS and iOS. This means you cannot sum iOS and macOS bugs together to get a total across Apple's platforms without significantly miscounting.  For the above reasons you should not treat these numbers as **exact** but instead as reasonably accurate estimates of the relative percentage of memory unsafety issues Apple has seen in its products in this time range.
