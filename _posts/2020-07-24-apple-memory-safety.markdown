@@ -7,11 +7,12 @@ title: 2020 in Memory Unsafety - Apple's Operating Systems
 
 ## iOS/iPadOS
 
-iOS 13 was released September 19, 2019 and has subsequently had a total of 14 feature and point releases. Unlike macOS, the iOS 13 series has several small bugfix releases that did not correct security issues. These are marked as N/A for bugs/CVEs but remain present in the list below.
+iOS 13 was released September 19, 2019 and has subsequently had a total of 15 feature and point releases. Unlike macOS, the iOS 13 series has several small bugfix releases that did not correct security issues. These are marked as N/A for bugs/CVEs but remain present in the list below.
 
 | Release                                                      | Memory Unsafety Bugs | Total CVE Count | Percentage |
 | ------------------------------------------------------------ | -------------------- | --------------- | ---------- |
 | <a href="https://support.apple.com/en-us/HT211288">13.6</a>  | 15                   | 29              | 51.7%      |
+| <a href="https://support.apple.com/en-us/HT211214">13.5.1</a>| 1                    | 1               | 100%       |
 | <a href="https://support.apple.com/en-us/HT211168">13.5</a>  | 28                   | 45              | 62.2%      |
 | 13.4.1                                                       | N/A                  | N/A             | N/A        |
 | <a href="https://support.apple.com/en-us/HT211102">13.4</a>  | 14                   | 30              | 46.7%      |
@@ -52,7 +53,7 @@ It would be interesting to aggregate statistics across major versions, but we on
 Let's look at this aggregated for all of iOS 13 (with iOS 12 for a limited historical perspective).
 
 | Release | Memory Unsafety Bugs | Total CVE Count | Percentage |
-| iOS 13  | 106                  | 179             | 59.2%      |
+| iOS 13  | 107                  | 180             | 59.4%      |
 | iOS 12  | 173                  | 261             | 66.3%      |
 | iOS 11  | 187                  | 309             | 60.5%      |
 
