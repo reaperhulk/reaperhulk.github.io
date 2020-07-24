@@ -56,7 +56,7 @@ Let's look at this aggregated for all of iOS 13 (with iOS 12 for a limited histo
 | iOS 12  | 173                  | 261             | 66.3%      |
 | iOS 11  | 187                  | 309             | 60.5%      |
 
-To date, Apple has had substantially less bugs with a lower (although unlkely to be statistically significant) percentage of memory unsafety related issues. This, intriguingly, does not align with the general belief that iOS 13 is a buggier release, but security bugs and user-facing bugs (which are what create that sort of reputation) are not necessarily an overlapping set.
+To date, Apple has had substantially fewer bugs with a lower (although unlkely to be statistically significant) percentage of memory unsafety related issues. This, intriguingly, does not align with the general belief that iOS 13 is a buggier release, but security bugs and user-facing bugs (which are what create that sort of reputation) are not necessarily an overlapping set.
 
 ## macOS
 
@@ -90,7 +90,7 @@ Let's run the macOS 10.13 (High Sierra) numbers as well so we have three generat
 | <a href="https://support.apple.com/en-us/HT208165">10.13 Supplemental Update</a>   | 2                    | 0               | 0%         |
 | <a href="https://support.apple.com/en-us/HT208144">10.13</a>                       | 56                   | 102             | 54.9%      |
 
-`Since we conducted the macOS 10.13 analysis years after the fact the numbers include more third party libraries. Apple has a tendency to update their security notes weeks or even months later to include the CVEs of projects (like Apache, tcpdump, et cetera) that were not necessarily public when they shipped the updated version. In macOS 10.13.1, for example, tcpdump had 60 (!!) memory unsafety vulnerabilities.
+Since we conducted the macOS 10.13 analysis years after the fact the numbers include more third party libraries. Apple has a tendency to update their security notes weeks or even months later to include the CVEs of projects (like Apache, tcpdump, et cetera) that were not necessarily public when they shipped the updated version. In macOS 10.13.1, for example, tcpdump had 60 (!!) memory unsafety vulnerabilities.
 
 Despite these limitations, let's aggregate the data again.
 
