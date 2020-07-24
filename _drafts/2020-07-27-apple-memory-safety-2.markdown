@@ -120,6 +120,14 @@ Memory unsafety contineus to dominate the total percentage of security bugs on A
 
 Apple continues to create rich and robust security architectures, but their systematic under-investment in memory safety (and even some mitigations like pervasive fuzzing) remain a sore spot for 2020.
 
+#### Evangelism!
+
+Need some swag to help convince your coworkers that memory unsafety is the real villain? You're in luck! We just commissioned some artwork and you, the reader, can buy it! Check out the <a href="/2020/07/16/fiab-posters/">blog post</a> and buy some for the C/C++ lover in your life. And always...
+
+<div style="margin:0 auto;width:100%;text-align:center">
+  <a href="https://www.redbubble.com/shop/ap/52556167"><img src="/assets/media/2020/vote.jpg" style="width:280px"></a>
+</div>
+
 
 [^1]: No blog post discussing another company's vulnerabilities would be complete without a discussion of the limitations.  Apple provides reasonably well-written descriptions of bugs and these allow us to generally bucket the vulnerabilities into our two categories of interest. However, occasionally a bug will defy easy categorization. For WebKit issues Apple does not distinguish between JIT compiler induced memory unsafety and C/C++ induced.  Apple also occasionally releases fixes that are still embargoed. When this happens they release their security notes, but update them at a later date with additional fixes. They denote these additional entries with an "Entry added on **date**" subscript, but we have typically long-since tweeted about it and won't catch the additional entries.  Since a significant amount of code is shared across Apple's operating systems (especially at the kernel level) many of these CVEs are duplicates across macOS and iOS. This means you cannot sum iOS and macOS bugs together to get a total across Apple's platforms without significantly miscounting.  For the above reasons you should not treat these numbers as **exact** but instead as reasonably accurate estimates of the relative percentage of memory unsafety issues Apple has seen in its products in this time range.
 [^2]: See <a href="/2019/07/23/apple-memory-safety/">Last year's blog post</a> for iOS 12 and macOS 10.14 numbers.
