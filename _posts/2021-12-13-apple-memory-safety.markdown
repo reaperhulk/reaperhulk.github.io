@@ -89,6 +89,8 @@ Despite these limitations, let's aggregate the data again.
 | macOS 10.14  | 213                  | 298             | 71.5%      |
 | macOS 10.13  | 256                  | 458             | 55.9%      |
 
+These numbers are significantly more volatile, but the average over the past 4 years is ~60%, in line with iOS.
+
 ### In the wild
 
 Much like iOS, for Big Sur Apple now notes vulnerabilities that were being actively exploited in the wild.
@@ -119,13 +121,13 @@ The above statistics are for any code that ships with macOS or iOS (including th
 | macOS 10.14 | 67                   | 76              | 88.2%      |
 | macOS 10.13 | 65                   | 88              | 73.9%      |
 
-The vast majority of kernel-related CVEs continue to be memory unsafety related.
+The vast majority of kernel-related CVEs continue to be memory unsafety related, although there is a drop with macOS 11. Hopefully that's the beginning of a trend...
 
 ## Analysis (Bugs vs Security Architecture Yearly Statement)
 
-Memory unsafety continues to dominate the total percentage of security bugs on Apple's platforms. Engineers there should **strenuously encourage management** to prioritize migration of code that parses untrusted input to memory safe languages. Doing so would drastically cut the number of security vulnerabilities. In some cases this work appears to have begun (e.g. BlastDoor), but extensive use of memory unsafe libraries like ImageIO weaken the protections. Migration of this type must be done incrementally, but it's equally important to identify your most vulnerable surface area and systematically harden your systems.
+Memory unsafety continues to dominate the total percentage of security bugs on Apple's platforms. Engineers there should **strenuously lobby management** to prioritize migration of code that parses untrusted input to memory safe languages. Doing so would drastically cut the number of security vulnerabilities. In some cases this work appears to have begun (e.g. BlastDoor), but extensive use of memory unsafe libraries like ImageIO weaken the protections. Migrations must be done incrementally, so Apple should continue to identify their most vulnerable surface area and systematically harden it. Might we suggest ImageIO as a candidate?
 
-Major investment should also be undertaken in determining how to migrate XNU itself. Moving kernel extensions to a C++ userland (via the <a href="https://developer.apple.com/system-extensions/">system extension</a> concept) will mitigate the severity of vulnerabilities in some cases, but is ultimately a poor substitute for a memory safe solution.
+Major investment should also be undertaken in determining how to migrate XNU itself. Moving kernel extensions to a C++ userland (via the <a href="https://developer.apple.com/system-extensions/">system extension</a> concept) will mitigate the severity of vulnerabilities in some cases, but is ultimately a poor substitute for a memory safe solution. The <a href="https://github.com/Rust-for-Linux">Rust for Linux</a> project, while nascent itself, is demonstrating the potential viability of memory safe languages in a kernel.
 
 As we note every year, <a href="https://twitter.com/i41nbeer">Ian Beer</a> once said:
 
@@ -135,7 +137,7 @@ Apple creates robust security architectures, but their systematic under-investme
 
 <br><br><br>
 
-[^1]: No blog post discussing another company's vulnerabilities would be complete without a discussion of the limitations. Apple provides reasonably well-written descriptions of bugs and these allow us to generally bucket the vulnerabilities into our two categories of interest. However, occasionally a bug will defy easy categorization or we will make a mistake. For WebKit issues Apple **does not distinguish between JIT compiler induced memory unsafety and C/C++ induced**. Apple also occasionally releases fixes that are still embargoed. When this happens they release their security notes, but update them at a later date with additional fixes. They denote these additional entries with an "Entry added on **date**" subscript, but we have typically long-since tweeted about it and won't catch the additional entries. This blog post recounted as part of the analysis rather than relying on past data.
+[^1]: No blog post discussing another company's vulnerabilities would be complete without a discussion of the limitations. Apple provides reasonably well-written descriptions of bugs and these allow us to generally bucket the vulnerabilities into our two categories of interest. However, occasionally a bug will defy easy categorization or we will make a mistake. For WebKit issues Apple **does not distinguish between JIT compiler induced memory unsafety and C/C++ induced**. Apple also occasionally releases fixes that are still embargoed. When this happens they release their security notes, but update them at a later date with additional fixes. They denote these additional entries with an "Entry added on **date**" subscript, but we have typically long-since tweeted about it and won't catch the additional entries. This blog post performed a recount as part of the analysis rather than relying on past data.
 [^6]: Since a significant amount of code is shared across Apple's operating systems (especially at the kernel level) many of these CVEs are duplicates across macOS and iOS. This means you cannot sum iOS and macOS bugs together to get a total across Apple's platforms without significantly miscounting. Finally, Apple typically does not document security bugs they find and fix internally. Thus, you should not treat these numbers as **exact** but instead as reasonably accurate estimates of the relative percentage of memory unsafety issues Apple has seen in its products in this time range.
 [^2]: Apple's information about several vulnerabilities is insufficient to categorize memory unsafety. The biggest offender are the ImageIO vulnerabilities. Some of them are clearly labeled, but many fall into a "This issue was addressed with improved checks" bucket which tells us nothing about the underlying issue. When we do not have enough information we generally do **not** count them as memory unsafety, even if it seems likely that they are.
 [^3]: These numbers are low as they have not been recomputed with Apple's updated documents.
