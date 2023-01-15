@@ -9,7 +9,7 @@ Self-hosted runners have one big drawback[^1] -- they lack build isolation. In t
 
 For this reason, we have constrained our M1 runner to only pushes to main since we installed it, but, <a href="https://frinkiac.com/meme/S05E16/479261/m/UFJPRkVTU0lPTkFMIEFUSExFVEVTLS0gCkFMV0FZUyBXQU5USU4nIE1PUkUu">like professional athletes</a>, we always want more.
 
-## <a href="https://github.com/reaperhulk/cidermill">CiderMill</a>[^15], ephemeral macOS VM orchestration for GHA
+## <a href="https://github.com/reaperhulk/cidermill">CiderMill</a>[^15], ephemeral macOS VM runners for GHA
 
 We created <a href="https://github.com/reaperhulk/cidermill">CiderMill</a> to get the ephemeral macOS arm64[^14] bliss we craved but <a href="https://github.com/github/roadmap/issues/528">didn't want to wait for</a>. CiderMill uses <a href="https://github.com/cirruslabs/tart">tart</a> and <a href="https://github.blog/changelog/2021-09-20-github-actions-ephemeral-self-hosted-runners-new-webhooks-for-auto-scaling/">GHA's ephemeral runner support</a> to provide build isolation while integrating extremely well with the GitHub Actions ecosystem. Simply put it does the following:
 * Boots one or more[^10] fresh macOS VMs set up via your own customer Packer scripts using tart (which, in turn, leverages Apple's Virtualization.framework).
